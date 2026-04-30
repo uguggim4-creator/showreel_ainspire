@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 import { Work } from "@/data/works";
 import LazyYouTube from "@/components/LazyYouTube";
 
-const ACCENT = "#F4E430";
-
 interface Props {
   work: Work;
   nextWork: Work;

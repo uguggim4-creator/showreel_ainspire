@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { motion, AnimatePresence } from "framer-motion";
@@ -167,7 +168,7 @@ export default function HeroCarousel() {
                       <p className="text-xl md:text-2xl text-white/70 font-light tracking-wide mb-12 max-w-2xl">
                         {slide.subline}
                       </p>
-                      <a
+                      <Link
                         href="/works"
                         className="inline-flex items-center gap-4 text-[15px] md:text-[17px] tracking-[0.22em] uppercase font-semibold transition-all duration-300 hover:gap-6"
                         style={{ color: ACCENT }}
@@ -177,7 +178,7 @@ export default function HeroCarousel() {
                         <svg width="18" height="18" viewBox="0 0 14 14" fill="none">
                           <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                      </a>
+                      </Link>
                     </motion.div>
                   )}
                 </AnimatePresence>
