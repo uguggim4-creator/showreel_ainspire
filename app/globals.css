@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0a0a0a;
+  --fg: #fafafa;
+  --accent: #F4E430;
+  --muted: rgba(250, 250, 250, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Pretendard Variable', 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 한국어 단어 단위 줄바꿈 — 모든 텍스트 요소 */
+h1, h2, h3, h4, h5, h6, p, span, a, li, label, button {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+::selection {
+  background: var(--accent);
+  color: #0a0a0a;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: rgba(250,250,250,0.15); border-radius: 2px; }
+
+/* ── Hero carousel (horizontal, full-height) ── */
+.embla-hero {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.embla-hero__container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  will-change: transform;
+}
+.embla-hero__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  height: 100%;
+}
+
+/* ── Gallery horizontal scroll ── */
+.embla-gallery {
+  overflow: hidden;
+}
+.embla-gallery__container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+/* ── Marquee ── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-track-slow {
+  animation: marquee 60s linear infinite;
+  will-change: transform;
+}
+.marquee-track-slow:hover {
+  animation-play-state: paused;
+}
