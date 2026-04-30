@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { motion, AnimatePresence } from "framer-motion";
@@ -116,40 +115,24 @@ export default function HeroCarousel() {
               className="embla-hero__slide relative flex items-end"
               style={{ width: "100%", height: "100%", flex: "0 0 100%" }}
             >
-              {/* 영상/이미지 배경 */}
-              {slide.videoSrc ? (
-                <video
-                  ref={(el) => { videoRefs.current[i] = el; }}
-                  src={slide.videoSrc}
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    objectPosition: "center",
-                    zIndex: 0,
-                  }}
-                />
-              ) : slide.youtubeId ? (
-                <Image
-                  src={`https://i.ytimg.com/vi/${slide.youtubeId}/maxresdefault.jpg`}
-                  alt={slide.headline}
-                  fill
-                  priority={i === 0}
-                  sizes="100vw"
-                  className="object-cover"
-                  style={{
-                    zIndex: 0,
-                    transform: selectedIndex === i ? "scale(1.05)" : "scale(1)",
-                    transition: "transform 5s ease-out",
-                  }}
-                />
-              ) : null}
+              {/* 영상 배경 */}
+              <video
+                ref={(el) => { videoRefs.current[i] = el; }}
+                src={slide.videoSrc}
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                  zIndex: 0,
+                }}
+              />
               {/* 좌측 어둠 오버레이 — 텍스트 가독성만 확보, 영상은 최대한 보이도록 */}
               <div
                 className="absolute inset-0"
