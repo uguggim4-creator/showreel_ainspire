@@ -36,6 +36,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# large original videos (only compressed hero-* versions are committed)
+public/videos/honda.mp4
+public/videos/hero-yellow.mp4
+*.crdownload
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
