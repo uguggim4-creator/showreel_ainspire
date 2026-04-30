@@ -144,8 +144,8 @@ export default function HeroCarousel() {
 
               {/* 콘텐츠 — 좌측 하단 시네마틱 정렬 */}
               <div
-                className="relative w-full pl-20 md:pl-24 lg:pl-32 pr-8 md:pr-16 lg:pr-24 max-w-5xl"
-                style={{ paddingBottom: "160px", zIndex: 2 }}
+                className="relative w-full max-w-5xl"
+                style={{ paddingLeft: "50px", paddingRight: "50px", paddingBottom: "160px", zIndex: 2 }}
               >
                 <AnimatePresence mode="wait">
                   {selectedIndex === i && (
