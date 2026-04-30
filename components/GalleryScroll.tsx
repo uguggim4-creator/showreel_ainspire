@@ -37,11 +37,17 @@ export default function GalleryScroll() {
 
   return (
     <section
-      className="relative overflow-hidden"
-      style={{ background: "#0a0a0a", paddingTop: "50px", paddingBottom: "50px" }}
+      className="relative overflow-hidden border-t border-white/5"
+      style={{
+        background: "#0a0a0a",
+        paddingTop: "50px",
+        paddingBottom: "50px",
+        paddingLeft: "clamp(24px, 5vw, 96px)",
+        paddingRight: "clamp(24px, 5vw, 96px)",
+      }}
     >
       {/* 헤더 */}
-      <div className="px-8 md:px-16 mb-8 flex items-end justify-between">
+      <div className="mb-8 flex items-end justify-between">
         <div>
           <p className="text-[11px] tracking-[0.4em] mb-4 uppercase" style={{ color: ACCENT }}>
             Portfolio
@@ -103,7 +109,7 @@ export default function GalleryScroll() {
         </button>
 
         <div
-          className="embla-gallery px-8 md:px-16"
+          className="embla-gallery"
           ref={emblaRef}
           style={{ overflow: "hidden", width: "100%" }}
         >
@@ -195,7 +201,7 @@ export default function GalleryScroll() {
       </div>
 
       {/* 진행바 */}
-      <div className="px-8 md:px-16 mt-6">
+      <div className="mt-6">
         <div className="relative h-[1px] bg-white/10 w-full">
           <div
             className="absolute top-0 left-0 h-full transition-all duration-75"

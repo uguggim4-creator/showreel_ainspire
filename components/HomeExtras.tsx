@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const ACCENT = "#F4E430";
@@ -132,7 +134,8 @@ export function SloganSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-xs tracking-[0.4em] text-white/45 uppercase mb-16"
+          className="text-xs tracking-[0.4em] text-white/45 uppercase"
+          style={{ marginBottom: "30px" }}
         >
           — AINSPIRE Studio
         </motion.p>
@@ -167,6 +170,96 @@ export function SloganSection() {
             </span>
           </Link>
         </motion.div>
+      </div>
+    </section>
+  );
+}
+
+const studentWorks = [
+  {
+    id: "student-1",
+    title: "수강생 작품",
+    author: "AInspire 수강생",
+    youtubeId: "5IqDABPvH-0",
+  },
+];
+
+export function StudentGallery() {
+  const [playingId, setPlayingId] = useState<string | null>(null);
+
+  return (
+    <section
+      className="bg-[#0a0a0a] border-t border-white/5"
+      style={{
+        paddingTop: "50px",
+        paddingBottom: "50px",
+        paddingLeft: "clamp(24px, 5vw, 96px)",
+        paddingRight: "clamp(24px, 5vw, 96px)",
+      }}
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <p className="text-[11px] tracking-[0.4em] mb-5 uppercase" style={{ color: ACCENT }}>
+          Student Works
+        </p>
+        <h3 className="text-[clamp(1.8rem,3.5vw,3.5rem)] font-black tracking-tight text-white leading-[1.2] mb-12">
+          AInspire 수강생 갤러리
+        </h3>
+      </motion.div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {studentWorks.map((work, i) => (
+          <motion.div
+            key={work.id}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: i * 0.1 }}
+          >
+            <div className="relative aspect-video overflow-hidden bg-[#111] group">
+              {playingId === work.id ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${work.youtubeId}?autoplay=1&rel=0`}
+                  title={work.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setPlayingId(work.id)}
+                  className="absolute inset-0 w-full h-full cursor-pointer"
+                  aria-label={`${work.title} 재생`}
+                >
+                  <Image
+                    src={`https://i.ytimg.com/vi/${work.youtubeId}/maxresdefault.jpg`}
+                    alt={work.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover"
+                    style={{ filter: "brightness(0.6)" }}
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full border-2 border-white/60 flex items-center justify-center backdrop-blur-sm bg-black/40 group-hover:border-[#F4E430] transition-all duration-300">
+                      <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
+                        <polygon points="8,4 18,11 8,18" fill="white" fillOpacity="0.95" />
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              )}
+            </div>
+            <div className="mt-4">
+              <p className="text-sm font-semibold text-white">{work.title}</p>
+              <p className="text-xs text-white/40 mt-1">{work.author}</p>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

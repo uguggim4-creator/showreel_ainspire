@@ -3,10 +3,8 @@
 import { motion } from "framer-motion";
 
 const team = [
-  { name: "Kim Jae-won", initials: "CD", role: "Creative Director", bio: "10년 경력의 광고 감독. AI 도구를 활용한 새로운 비주얼 언어를 개척하고 있습니다." },
-  { name: "Lee Su-bin", initials: "VA", role: "AI Visual Artist", bio: "Stable Diffusion, Midjourney 등 생성 AI를 활용한 개념 미술 및 광고 비주얼을 제작합니다." },
-  { name: "Park Min-jun", initials: "MD", role: "Motion Designer", bio: "After Effects, Premiere Pro를 기반으로 AI 생성 콘텐츠를 영상으로 완성합니다." },
-  { name: "Choi Ye-rin", initials: "PR", role: "Producer", bio: "기획부터 납품까지 프로젝트 전체 파이프라인을 관장합니다." },
+  { name: "심보건", initials: "BK", role: "Creative Director", bio: "" },
+  { name: "김욱종", initials: "WJ", role: "AI Visual Artist", bio: "" },
 ];
 
 const values = [
