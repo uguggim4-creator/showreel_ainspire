@@ -147,13 +147,13 @@ export const heroSlides = [
     headline: "발레리나",
     subline: "AInspire Original — AI Short Film",
     description: "이미지 생성 없이 만든 1분 AI 숏필름",
-    videoSrc: "/videos/hero-2.mp4",
+    youtubeId: "bOesUv8ea9o",
   },
   {
     id: 3,
-    headline: "Honda Motorcycle",
-    subline: "Spec Commercial — AI Parody",
-    description: "AI만으로 완성한 4K 모터사이클 광고",
-    videoSrc: "/videos/hero-3.mp4",
+    headline: "AInspire Showreel",
+    subline: "AI Creative Studio",
+    description: "AI 크리에이티브의 가능성을 보여주다",
+    youtubeId: "8-MPqdavaO4",
   },
 ];
