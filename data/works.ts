@@ -30,6 +30,19 @@ export const works: Work[] = [
     thumbnailColor: "from-yellow-900 via-amber-800 to-orange-900",
   },
   {
+    id: "hyundai-play-the-city",
+    title: "현대건설 — Play the City",
+    client: "현대건설",
+    category: "Brand Film",
+    year: 2025,
+    duration: "00:30",
+    description:
+      "현대건설 미래 에너지 도시 캠페인 영상. 도시를 'Play'한다는 컨셉으로 미래형 스마트 시티 비전을 AI 영상으로 구현했습니다.",
+    youtubeId: "EnCTtPnHpzg",
+    thumbnail: yt("EnCTtPnHpzg"),
+    thumbnailColor: "from-blue-900 via-cyan-800 to-teal-900",
+  },
+  {
     id: "ikea-green-sanctuary",
     title: "IKEA — Green Sanctuary",
     client: "IKEA (Spec Ad)",
@@ -96,6 +109,19 @@ export const works: Work[] = [
     thumbnailColor: "from-green-900 via-emerald-800 to-teal-900",
   },
   {
+    id: "ainspire-showreel-2025",
+    title: "2025 AInspire Showreel",
+    client: "AInspire",
+    category: "Showreel",
+    year: 2025,
+    duration: "02:00",
+    description:
+      "2025 AInspire 쇼릴. 한 해 동안 제작한 AI 크리에이티브 작업물을 4K로 집대성한 포트폴리오 영상입니다.",
+    youtubeId: "V5RPVnDvN7M",
+    thumbnail: yt("V5RPVnDvN7M"),
+    thumbnailColor: "from-yellow-900 via-amber-800 to-orange-900",
+  },
+  {
     id: "ballerina-ai-shortfilm",
     title: "발레리나",
     client: "AInspire Original",
@@ -133,6 +159,32 @@ export const works: Work[] = [
     youtubeId: "4yLFIKUCbUg",
     thumbnail: yt("4yLFIKUCbUg"),
     thumbnailColor: "from-amber-900 via-orange-800 to-red-900",
+  },
+  {
+    id: "attack-on-titan-ai",
+    title: "진격의 거인 AI 실사",
+    client: "AInspire Original",
+    category: "Cinematic Scene",
+    year: 2025,
+    duration: "01:00",
+    description:
+      "진격의 거인을 AI 실사로 구현한 시네마틱 무비. 클링·Veo3 없이 미드저니만으로 완성한 4K 팬메이드 영상 — 팬이라면 무조건 봐야 할 퀄리티.",
+    youtubeId: "3CeEVv3bUr4",
+    thumbnail: yt("3CeEVv3bUr4"),
+    thumbnailColor: "from-red-900 via-orange-800 to-yellow-900",
+  },
+  {
+    id: "yi-sun-sin-vs-hideyoshi",
+    title: "이순신 vs 도요토미 — 임진왜란",
+    client: "AInspire Original",
+    category: "Cinematic Scene",
+    year: 2025,
+    duration: "01:00",
+    description:
+      "클링·Veo3 없이 미드저니만으로 만든 이순신 vs 도요토미 히데요시 시네마틱 임진왜란. 4K AI 영상으로 역사적 전투를 재현한 실험작.",
+    youtubeId: "Bk1yy0_UNa8",
+    thumbnail: yt("Bk1yy0_UNa8"),
+    thumbnailColor: "from-slate-900 via-gray-800 to-zinc-900",
   },
   {
     id: "nano-banana-brand-film",
