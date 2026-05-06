@@ -141,7 +141,7 @@ export default function Nav() {
               transition={{ delay: 0.3 }}
               className="px-8 pb-12 flex items-center justify-between"
             >
-              <p className="text-xs text-white/25 tracking-widest">hello@ainspire.kr</p>
+              <p className="text-xs text-white/25 tracking-widest">fraverse.ai@gmail.com</p>
               <p className="text-xs text-white/25 tracking-widest">© 2026 AINSPIRE</p>
             </motion.div>
           </motion.div>

@@ -65,7 +65,7 @@ export default function ContactPage() {
     setTimeout(() => {
       document.body.removeChild(hiddenForm);
       document.body.removeChild(iframe);
-    }, 2000);
+    }, 3500);
 
     setSubmitted(true);
   };
