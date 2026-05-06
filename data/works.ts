@@ -68,33 +68,7 @@ export const works: Work[] = [
     thumbnail: yt("UrSZirS15yk"),
     thumbnailColor: "from-cyan-900 via-blue-800 to-indigo-900",
   },
-  // ── 기존 작품 (업로드 최신순) ──
-  {
-    id: "ballerina-ai-shortfilm",
-    title: "발레리나",
-    client: "AInspire Original",
-    category: "AI Short Film",
-    year: 2025,
-    duration: "01:00",
-    description:
-      "이미지 생성 없이 반자동화 파이프라인으로 만든 1분 AI 숏필름. 무용수의 동작과 감정을 AI 비디오 모델만으로 표현하는 실험적 작업이며, 제작 프롬프트와 워크플로우를 전면 공개해 AI 영상 제작 방법론을 공유합니다.",
-    youtubeId: "bOesUv8ea9o",
-    thumbnail: yt("bOesUv8ea9o"),
-    thumbnailColor: "from-violet-900 via-purple-800 to-indigo-900",
-  },
-  {
-    id: "cherry-blossom-last-train",
-    title: "벚꽃 막차",
-    client: "AInspire Original",
-    category: "AI Short Film",
-    year: 2025,
-    duration: "01:00",
-    description:
-      "올해 벚꽃을 모니터 앞에서 보낸 사람들을 위한 감성 AI 숏필름. 봄의 기억, 놓친 순간, 그리고 다시 찾아온 계절의 감정을 AI 영상으로 재구성한 한 장의 시청각 엽서.",
-    youtubeId: "gSSdj40AunE",
-    thumbnail: yt("gSSdj40AunE"),
-    thumbnailColor: "from-rose-900 via-pink-800 to-orange-900",
-  },
+  // ── 기존 작품 ──
   {
     id: "hercules-vs-zeus",
     title: "헤라클레스 vs 제우스",
@@ -120,6 +94,32 @@ export const works: Work[] = [
     youtubeId: "Ju4wFVfbtzY",
     thumbnail: yt("Ju4wFVfbtzY"),
     thumbnailColor: "from-green-900 via-emerald-800 to-teal-900",
+  },
+  {
+    id: "ballerina-ai-shortfilm",
+    title: "발레리나",
+    client: "AInspire Original",
+    category: "AI Short Film",
+    year: 2025,
+    duration: "01:00",
+    description:
+      "이미지 생성 없이 반자동화 파이프라인으로 만든 1분 AI 숏필름. 무용수의 동작과 감정을 AI 비디오 모델만으로 표현하는 실험적 작업이며, 제작 프롬프트와 워크플로우를 전면 공개해 AI 영상 제작 방법론을 공유합니다.",
+    youtubeId: "bOesUv8ea9o",
+    thumbnail: yt("bOesUv8ea9o"),
+    thumbnailColor: "from-violet-900 via-purple-800 to-indigo-900",
+  },
+  {
+    id: "cherry-blossom-last-train",
+    title: "벚꽃 막차",
+    client: "AInspire Original",
+    category: "AI Short Film",
+    year: 2025,
+    duration: "01:00",
+    description:
+      "올해 벚꽃을 모니터 앞에서 보낸 사람들을 위한 감성 AI 숏필름. 봄의 기억, 놓친 순간, 그리고 다시 찾아온 계절의 감정을 AI 영상으로 재구성한 한 장의 시청각 엽서.",
+    youtubeId: "gSSdj40AunE",
+    thumbnail: yt("gSSdj40AunE"),
+    thumbnailColor: "from-rose-900 via-pink-800 to-orange-900",
   },
   {
     id: "warmest-video-cold-ai",
