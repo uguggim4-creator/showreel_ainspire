@@ -134,26 +134,42 @@ export const works: Work[] = [
   },
 ];
 
-export const heroSlides = [
+interface HeroSlide {
+  id: number;
+  headline: string;
+  subline: string;
+  description: string;
+  videoSrc?: string;
+  youtubeId?: string;
+}
+
+export const heroSlides: HeroSlide[] = [
   {
     id: 1,
-    headline: "AI × CREATIVE",
-    subline: "우리는 새로운 광고를 만듭니다",
-    description: "AI와 크리에이티브의 경계를 허물다",
-    videoSrc: "/videos/hero-1.mp4",
+    headline: "Yellow",
+    subline: "AInspire Original Series — Ep01",
+    description: "평범한 직장인이 동료를 잡아먹었습니다",
+    youtubeId: "yMTES7fYTQo",
   },
   {
     id: 2,
-    headline: "Honda Motorcycle",
-    subline: "Spec Commercial — AI Parody",
-    description: "AI만으로 완성한 4K 모터사이클 광고",
-    videoSrc: "/videos/hero-honda.mp4",
+    headline: "Green Sanctuary",
+    subline: "이케아 AI 가상 광고 — 숲을 품은 내추럴 거실",
+    description: "AI가 그린 공간, 자연을 닮은 인테리어",
+    youtubeId: "8-MPqdavaO4",
   },
   {
     id: 3,
-    headline: "Green Sanctuary",
-    subline: "숲을 품은 내추럴 거실",
-    description: "AI가 그린 공간, 자연을 닮은 인테리어",
-    videoSrc: "/videos/hero-green-sanctuary.mp4",
+    headline: "Vivid Kitsch",
+    subline: "이케아 AI 가상 광고 — 도파민이 터지는 키치한 놀이터",
+    description: "색감으로 말하는 AI 크리에이티브",
+    youtubeId: "IP2DcE_CJqg",
+  },
+  {
+    id: 4,
+    headline: "Kling 2.1",
+    subline: "클링으로만 만들어본 AI 광고",
+    description: "Kling 2.1 성능 테스트 — AI만으로 완성한 광고",
+    youtubeId: "UrSZirS15yk",
   },
 ];
