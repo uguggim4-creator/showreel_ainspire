@@ -2,11 +2,6 @@
 
 import { motion } from "framer-motion";
 
-const team = [
-  { name: "심보건", initials: "BK", role: "Creative Director", bio: "" },
-  { name: "김욱종", initials: "WJ", role: "AI Visual Artist", bio: "" },
-];
-
 const values = [
   {
     number: "01",
@@ -29,9 +24,9 @@ export default function AboutPage() {
   return (
     <main
       className="min-h-screen bg-[#0a0a0a]"
-      style={{ paddingBottom: "50px" }} // 수정 시 SECTIONS.md 참조
       style={{
         paddingTop: "60px",
+        paddingBottom: "50px",
         paddingLeft: "20px",
         paddingRight: "20px",
       }}

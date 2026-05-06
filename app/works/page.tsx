@@ -38,9 +38,8 @@ export default function WorksPage() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          style={{ originX: 0 }}
           className="h-[1px] w-full bg-white/10"
-          style={{ marginTop: "30px" }}
+          style={{ originX: 0, marginTop: "30px" }}
         />
       </div>
 
