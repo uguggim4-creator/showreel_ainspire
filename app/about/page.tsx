@@ -10,34 +10,35 @@ const team = [
 const values = [
   {
     number: "01",
-    title: "AI는 도구다",
-    desc: "AI는 크리에이티브를 대체하지 않습니다. 우리는 AI를 붓처럼 사용해 더 빠르고 대담한 아이디어를 실현합니다.",
+    title: "영상의 본질",
+    desc: "단순 튜토리얼이 아닌, 진짜 기획과 연출이 담긴 AI 영상 제작기를 나눕니다. 무엇을 어떻게 담아낼 것인가가 핵심입니다.",
   },
   {
     number: "02",
-    title: "이야기가 먼저다",
-    desc: "기술보다 감동이 우선입니다. 어떤 도구를 쓰든 결국 사람의 마음을 움직이는 이야기가 목표입니다.",
+    title: "실전 크리에이티브",
+    desc: "매주 업데이트되는 전문가 팟캐스트와 실전 AI 영상 제작 시리즈. 현업 영상 제작자의 노하우를 공유합니다.",
   },
   {
     number: "03",
-    title: "경계를 허물다",
-    desc: "광고, 영화, 아트. 장르의 경계를 허물고 전혀 새로운 형식의 크리에이티브를 만듭니다.",
+    title: "AI 크리에이티브 허브",
+    desc: "단순한 기능 설명을 넘어, AI를 활용한 실질적인 크리에이티브 솔루션을 제공하는 공간입니다.",
   },
 ];
 
 export default function AboutPage() {
   return (
     <main
-      className="min-h-screen bg-[#0a0a0a] pb-40"
+      className="min-h-screen bg-[#0a0a0a]"
+      style={{ paddingBottom: "50px" }} // 수정 시 SECTIONS.md 참조
       style={{
         paddingTop: "60px",
         paddingLeft: "20px",
         paddingRight: "20px",
       }}
     >
-      {/* Hero statement */}
-      <section style={{ marginBottom: "20px" }}>
-        <div className="mb-20 overflow-hidden">
+      {/* Hero — ABOUT 타이틀 */}
+      <section style={{ marginBottom: "10px" }}>
+        <div className="overflow-hidden">
           <motion.h1
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
@@ -46,34 +47,55 @@ export default function AboutPage() {
           >
             ABOUT
           </motion.h1>
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            style={{ originX: 0, marginTop: "30px" }}
+            className="h-[1px] w-full bg-white/10"
+          />
         </div>
+      </section>
 
+      {/* 소개 */}
+      <section style={{ marginBottom: "20px" }}>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-[11px] tracking-[0.4em] uppercase mb-5"
+          style={{ color: "#F4E430" }}
+        >
+          Who We Are
+        </motion.p>
         <div className="overflow-hidden">
           <motion.h2
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[clamp(1.2rem,2.4vw,2.4rem)] font-black tracking-tight text-white leading-[1.4] whitespace-nowrap"
+            transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="text-[clamp(1.2rem,2.4vw,2.4rem)] font-black tracking-tight text-white leading-[1.4]"
           >
-            우리는 AI를 도구로, 크리에이티브를 무기로 사용합니다.
+            영상의 본질에 AI를 더하다
           </motion.h2>
         </div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="text-white/65 text-lg md:text-xl mt-16 max-w-2xl leading-[1.9]"
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className="text-white/65 text-lg md:text-xl max-w-2xl leading-[1.9]"
+          style={{ marginTop: "30px" }}
         >
-          AINSPIRE는 AI와 크리에이티브 기술을 결합해 브랜드의 이야기를
-          새로운 방식으로 전달하는 크리에이티브 스튜디오입니다.
-          우리는 아이디어가 기술의 한계를 넘어설 수 있다고 믿습니다.
+          수많은 AI 툴이 쏟아지는 지금, 정말 중요한 것은
+          &lsquo;무엇을 어떻게 담아낼 것인가&rsquo; 하는 영상의 본질입니다.
+          AInspire는 단순한 기능 설명을 넘어, 현업 영상 제작자의 노하우를 바탕으로
+          AI를 활용한 실질적인 크리에이티브 솔루션을 제공하는 AI 크리에이티브 허브입니다.
         </motion.p>
       </section>
 
       {/* Values */}
       <section style={{ marginBottom: "20px" }}>
-        <div className="h-[1px] w-full bg-white/10 mb-20" />
+        <div className="h-[1px] w-full bg-white/10" style={{ marginTop: "20px", marginBottom: "20px" }} />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           {values.map((v, i) => (
             <motion.div
@@ -95,8 +117,8 @@ export default function AboutPage() {
 
       {/* Mission statement — 좌측 정렬 인용구 */}
       <section
-        className="overflow-hidden relative pt-32 border-t border-white/[0.06]"
-        style={{ marginBottom: "240px" }}
+        className="overflow-hidden relative border-t border-white/[0.06]"
+        style={{ paddingTop: "20px", marginBottom: "20px" }}
       >
         {/* 우측 INSPIRE 워터마크 — 약하게 */}
         <div
@@ -117,14 +139,14 @@ export default function AboutPage() {
           </span>
         </div>
 
-        <div className="relative z-10 py-20 md:py-28 max-w-5xl">
+        <div className="relative z-10 max-w-5xl" style={{ paddingTop: "0", paddingBottom: "0" }}>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-[11px] tracking-[0.4em] mb-10 uppercase font-semibold"
-            style={{ color: "#F4E430" }}
+            className="text-[11px] tracking-[0.4em] uppercase font-semibold"
+            style={{ color: "#F4E430", marginBottom: "15px" }}
           >
             Our Belief
           </motion.p>
@@ -156,14 +178,14 @@ export default function AboutPage() {
                 fontSize: "clamp(1.2rem, 2.4vw, 2.4rem)",
               }}
             >
-              새로운 광고는 보는 것이 아니라{" "}
+              좋은 영상은 기술이 아니라,{" "}
               <em
                 className="not-italic font-medium"
                 style={{ color: "#F4E430" }}
               >
-                느끼는 것
+                시선
               </em>
-              이다.
+              에서 나온다.
             </p>
           </motion.div>
 
@@ -172,7 +194,8 @@ export default function AboutPage() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-14 flex items-center gap-4 pl-6 md:pl-10"
+            className="flex items-center gap-4 pl-6 md:pl-10"
+            style={{ marginTop: "15px" }}
           >
             <span className="block w-10 h-[1px]" style={{ background: "#F4E430" }} />
             <span className="text-xs tracking-[0.35em] uppercase text-white/55 font-medium">
@@ -182,42 +205,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section>
-        <div className="h-[1px] w-full bg-white/10 mb-20" />
-        <p className="text-xs tracking-[0.4em] text-white/55 uppercase mb-16">Team</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {team.map((member, i) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
-              className="group"
-            >
-              {/* Avatar placeholder */}
-              <div className="aspect-square bg-white/[0.04] border border-white/10 mb-6 relative overflow-hidden group-hover:border-[#F4E430]/40 transition-colors duration-300">
-                {/* 미세한 그라데이션 — 톤 통일 */}
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background: "radial-gradient(circle at 30% 30%, rgba(244,228,48,0.06) 0%, transparent 60%)",
-                  }}
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-5xl font-black text-white/30 group-hover:text-[#F4E430]/80 transition-colors duration-300 tracking-tight">
-                    {member.initials}
-                  </span>
-                </div>
-              </div>
-              <h3 className="text-base font-semibold text-white mb-1">{member.name}</h3>
-              <p className="text-xs text-[#F4E430] tracking-wider mb-3">{member.role}</p>
-              <p className="text-sm text-white/55 leading-relaxed">{member.bio}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
     </main>
   );
 }

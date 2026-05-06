@@ -21,11 +21,11 @@ export default function WorksPage() {
 
   return (
     <main
-      className="min-h-screen bg-[#0a0a0a] pb-24 px-6 md:px-16 lg:px-20"
-      style={{ paddingTop: "60px" }}
+      className="min-h-screen bg-[#0a0a0a] px-6 md:px-16 lg:px-20"
+      style={{ paddingTop: "60px", paddingBottom: "50px" }}
     >
       {/* Title */}
-      <div className="mb-16 overflow-hidden">
+      <div style={{ marginBottom: "0" }} className="overflow-hidden">
         <motion.h1
           initial={{ y: "100%" }}
           animate={{ y: 0 }}
@@ -39,7 +39,8 @@ export default function WorksPage() {
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           style={{ originX: 0 }}
-          className="h-[1px] w-full bg-white/10 mt-4"
+          className="h-[1px] w-full bg-white/10"
+          style={{ marginTop: "30px" }}
         />
       </div>
 
@@ -48,7 +49,8 @@ export default function WorksPage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="flex gap-6 mb-12 flex-wrap items-center"
+        className="flex gap-6 flex-wrap items-center"
+        style={{ marginTop: "10px", marginBottom: "50px" }}
       >
         {categories.map((cat) => {
           const isActive = selected === cat;
@@ -56,7 +58,7 @@ export default function WorksPage() {
             <button
               key={cat}
               onClick={() => setSelected(cat)}
-              className={`text-xs tracking-[0.2em] uppercase pb-1 transition-colors duration-300 ${
+              className={`text-sm tracking-[0.2em] uppercase pb-1 transition-colors duration-300 ${
                 isActive
                   ? "text-[#F4E430] border-b border-[#F4E430]"
                   : "text-white/55 hover:text-white border-b border-transparent hover:border-white/20"

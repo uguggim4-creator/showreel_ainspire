@@ -39,6 +39,9 @@ yarn-error.log*
 # large original videos (only compressed hero-* versions are committed)
 public/videos/honda.mp4
 public/videos/hero-yellow.mp4
+public/videos/dior.mp4
+public/videos/Type B*
+public/videos/Type C*
 *.crdownload
 
 # typescript

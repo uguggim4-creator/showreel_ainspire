@@ -1,6 +1,6 @@
 import HeroCarousel from "@/components/HeroCarousel";
 import GalleryScroll from "@/components/GalleryScroll";
-import { MarqueeBand, StudentGallery, AboutPreview, SloganSection, Footer } from "@/components/HomeExtras";
+import { MarqueeBand, StudentGallery, AboutPreview } from "@/components/HomeExtras";
 
 export default function Home() {
   return (
@@ -10,8 +10,6 @@ export default function Home() {
       <GalleryScroll />
       <StudentGallery />
       <AboutPreview />
-      <SloganSection />
-      <Footer />
     </main>
   );
 }

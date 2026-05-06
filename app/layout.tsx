@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Nav from "@/components/Nav";
+import { Footer } from "@/components/HomeExtras";
 
 export const metadata: Metadata = {
   title: "AINSPIRE — AI Creative Studio",
@@ -36,6 +37,7 @@ export default function RootLayout({
       <body>
         <Nav />
         {children}
+        <Footer />
       </body>
     </html>
   );

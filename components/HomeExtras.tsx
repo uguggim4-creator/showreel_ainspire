@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import useEmblaCarousel from "embla-carousel-react";
 import { motion } from "framer-motion";
 
 const ACCENT = "#F4E430";
@@ -124,9 +125,8 @@ export function SloganSection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-[clamp(1.4rem,3vw,3rem)] font-light text-white/85 leading-[1.6] mb-12"
         >
-          {"\""}크리에이티브가 멈추는 자리에서,
-          <br />
-          <span style={{ color: ACCENT }}>AI는 시작점이 됩니다.</span>
+          {"\""}영상의 본질에{" "}
+          <span style={{ color: ACCENT }}>AI를 더하다</span>
           {"\""}
         </motion.p>
         <motion.p
@@ -176,16 +176,44 @@ export function SloganSection() {
 }
 
 const studentWorks = [
-  {
-    id: "student-1",
-    title: "수강생 작품",
-    author: "AInspire 수강생",
-    youtubeId: "5IqDABPvH-0",
-  },
+  { id: "s-1", title: "Miserere tui (미제레레 투이: 네게 자비를)", author: "OYR Film", youtubeId: "5IqDABPvH-0" },
+  { id: "s-2", title: "YASI : The Night Market of Joseon", author: "OYR Film", youtubeId: "mwyK-JzGmQo" },
+  { id: "s-3", title: "전통과 미래가 공존하는 곳, 대한민국 도시의 숨겨진 비주얼", author: "AI드라마", youtubeId: "lF2i-lcInXY" },
+  { id: "s-4", title: "사이버펑크 2077 — 프라이빗 가이세키", author: "NPC의 뒷이야기", youtubeId: "I5uSkFdD-K0" },
+  { id: "s-5", title: "The Path of Ink, the Path of Australia", author: "AI MOTION LAB", youtubeId: "v_L2aWGk97Y" },
+  { id: "s-6", title: "BLOOD RITE — BLOODPRINT Universe", author: "ecaia", youtubeId: "ePNUOOk-sUk" },
+  { id: "s-7", title: "사라진 지붕을 찾아라! — 꼬마탐정 포포", author: "승희쌤", youtubeId: "UI-CtxawYQw" },
+  { id: "s-8", title: "엠버 [Ember] EP.1 Among the Strays", author: "Node 8", youtubeId: "WoJRO_md8DU" },
+  { id: "s-9", title: "CODE:42 [ RIA 리아 ] \"O.O\" Official M/V", author: "Aidol Company", youtubeId: "6K2QFZNBvEs" },
+  { id: "s-10", title: "시간을 고치는 사람 — 통합본", author: "AI드라마", youtubeId: "Z643PSR8KAY" },
+  { id: "s-11", title: "[Knight Run Fan MV] BLUE ASH (Korean Ver.)", author: "sputlab", youtubeId: "VXXewv3_fU0" },
 ];
 
 export function StudentGallery() {
   const [playingId, setPlayingId] = useState<string | null>(null);
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    axis: "x",
+    dragFree: true,
+    loop: false,
+    align: "start",
+  });
+  const [progress, setProgress] = useState(0);
+
+  const onScroll = useCallback(() => {
+    if (!emblaApi) return;
+    setProgress(Math.max(0, Math.min(1, emblaApi.scrollProgress())));
+  }, [emblaApi]);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    emblaApi.on("scroll", onScroll);
+    emblaApi.on("reInit", onScroll);
+    onScroll();
+    return () => { emblaApi.off("scroll", onScroll); emblaApi.off("reInit", onScroll); };
+  }, [emblaApi, onScroll]);
 
   return (
     <section
@@ -202,64 +230,91 @@ export function StudentGallery() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
+        className="mb-12"
       >
         <p className="text-[11px] tracking-[0.4em] mb-5 uppercase" style={{ color: ACCENT }}>
           Student Works
         </p>
-        <h3 className="text-[clamp(1.8rem,3.5vw,3.5rem)] font-black tracking-tight text-white leading-[1.2] mb-12">
+        <h3 className="text-[clamp(1.8rem,3.5vw,3.5rem)] font-black tracking-tight text-white leading-[1.2]">
           AInspire 수강생 갤러리
         </h3>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {studentWorks.map((work, i) => (
-          <motion.div
-            key={work.id}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
-          >
-            <div className="relative aspect-video overflow-hidden bg-[#111] group">
-              {playingId === work.id ? (
-                <iframe
-                  src={`https://www.youtube.com/embed/${work.youtubeId}?autoplay=1&rel=0`}
-                  title={work.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                />
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => setPlayingId(work.id)}
-                  className="absolute inset-0 w-full h-full cursor-pointer"
-                  aria-label={`${work.title} 재생`}
-                >
-                  <Image
-                    src={`https://i.ytimg.com/vi/${work.youtubeId}/maxresdefault.jpg`}
-                    alt={work.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover"
-                    style={{ filter: "brightness(0.6)" }}
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full border-2 border-white/60 flex items-center justify-center backdrop-blur-sm bg-black/40 group-hover:border-[#F4E430] transition-all duration-300">
-                      <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
-                        <polygon points="8,4 18,11 8,18" fill="white" fillOpacity="0.95" />
-                      </svg>
-                    </div>
-                  </div>
-                </button>
-              )}
-            </div>
-            <div className="mt-4">
-              <p className="text-sm font-semibold text-white">{work.title}</p>
-              <p className="text-xs text-white/40 mt-1">{work.author}</p>
-            </div>
-          </motion.div>
-        ))}
+      <div className="relative">
+        <button
+          onClick={scrollPrev}
+          aria-label="Prev"
+          className="hidden md:flex items-center justify-center w-11 h-11 border border-white/20 text-white/40 hover:border-white/60 hover:text-white transition-colors duration-300"
+          style={{ position: "absolute", top: "50%", left: "-20px", transform: "translateY(-50%)", zIndex: 10, background: "rgba(10,10,10,0.8)", backdropFilter: "blur(4px)" }}
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+        </button>
+        <button
+          onClick={scrollNext}
+          aria-label="Next"
+          className="hidden md:flex items-center justify-center w-11 h-11 border border-white/20 text-white/40 hover:border-white/60 hover:text-white transition-colors duration-300"
+          style={{ position: "absolute", top: "50%", right: "-20px", transform: "translateY(-50%)", zIndex: 10, background: "rgba(10,10,10,0.8)", backdropFilter: "blur(4px)" }}
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+        </button>
+
+        <div className="embla-gallery" ref={emblaRef} style={{ overflow: "hidden", width: "100%" }}>
+          <div className="embla-gallery__container" style={{ display: "flex", flexDirection: "row", alignItems: "stretch", flexWrap: "nowrap", touchAction: "pan-y pinch-zoom" }}>
+            {studentWorks.map((work) => (
+              <div
+                key={work.id}
+                className="embla-gallery__slide"
+                style={{ flex: "0 0 auto", width: "clamp(300px, 30vw, 450px)", minWidth: 0, marginRight: "16px" }}
+              >
+                <div className="relative aspect-video overflow-hidden bg-[#111] group">
+                  {playingId === work.id ? (
+                    <iframe
+                      src={`https://www.youtube.com/embed/${work.youtubeId}?autoplay=1&rel=0`}
+                      title={work.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full"
+                    />
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setPlayingId(work.id)}
+                      className="absolute inset-0 w-full h-full cursor-pointer"
+                      aria-label={`${work.title} 재생`}
+                    >
+                      <Image
+                        src={`https://i.ytimg.com/vi/${work.youtubeId}/maxresdefault.jpg`}
+                        alt={work.title}
+                        fill
+                        sizes="(max-width: 768px) 300px, (max-width: 1280px) 380px, 450px"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        style={{ filter: "brightness(0.6)" }}
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-16 h-16 rounded-full border-2 border-white/60 flex items-center justify-center backdrop-blur-sm bg-black/40 group-hover:border-[#F4E430] transition-all duration-300">
+                          <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
+                            <polygon points="8,4 18,11 8,18" fill="white" fillOpacity="0.95" />
+                          </svg>
+                        </div>
+                      </div>
+                    </button>
+                  )}
+                </div>
+                <div className="mt-4">
+                  <p className="text-sm font-semibold text-white">{work.title}</p>
+                  <p className="text-xs text-white/40 mt-1">{work.author}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* 진행바 */}
+      <div className="mt-6">
+        <div className="relative h-[1px] bg-white/10 w-full">
+          <div className="absolute top-0 left-0 h-full transition-all duration-75" style={{ width: `${progress * 100}%`, background: ACCENT }} />
+        </div>
       </div>
     </section>
   );
@@ -268,7 +323,7 @@ export function StudentGallery() {
 export function AboutPreview() {
   return (
     <section
-      className="bg-[#0a0a0a] border-t border-white/5"
+      className="bg-[#0a0a0a] border-t border-white/5 relative overflow-hidden"
       style={{
         paddingTop: "50px",
         paddingBottom: "50px",
@@ -276,13 +331,31 @@ export function AboutPreview() {
         paddingRight: "clamp(24px, 5vw, 96px)",
       }}
     >
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
+      {/* 배경 워터마크 */}
+      <div className="absolute inset-0 flex items-center justify-end pointer-events-none select-none overflow-hidden" aria-hidden>
+        <span
+          className="font-black tracking-tighter"
+          style={{
+            fontSize: "clamp(8rem, 22vw, 24rem)",
+            color: "rgba(255,255,255,0.02)",
+            lineHeight: 0.85,
+            whiteSpace: "nowrap",
+            transform: "translateX(10%)",
+          }}
+        >
+          AINSPIRE
+        </span>
+      </div>
+
+      <div className="relative z-10">
+        {/* 메인 카피 */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-[clamp(1.8rem,4vw,4.5rem)] font-black tracking-tight text-white leading-[1.05] max-w-3xl"
+          style={{ marginBottom: "40px" }}
         >
           우리는 AI를 도구로,
           <br />
@@ -291,45 +364,57 @@ export function AboutPreview() {
           사용합니다.
         </motion.h2>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex-shrink-0"
-        >
-          <Link
-            href="/about"
-            className="group inline-flex items-center gap-3 text-sm tracking-[0.2em] uppercase border border-white/20 px-8 py-4 text-white/60 hover:text-white hover:border-white/50 transition-all duration-300"
+        {/* 슬로건 + Contact us — 가운데 정렬 */}
+        <div className="text-center" style={{ marginTop: "80px" }}>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-[clamp(1.4rem,3vw,3rem)] font-light text-white/85 leading-[1.6] mb-12"
           >
-            About more
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="group-hover:translate-x-1 transition-transform duration-300">
-              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </Link>
-        </motion.div>
-      </div>
+            {"\u201C"}영상의 본질에{" "}
+            <span style={{ color: ACCENT }}>AI를 더하다</span>
+            {"\u201D"}
+          </motion.p>
 
-      {/* 수치 행 */}
-      <div className="mt-20 grid grid-cols-3 gap-px border border-white/10">
-        {[
-          { num: "120+", label: "Projects" },
-          { num: "40+", label: "Clients" },
-          { num: "18+", label: "Awards" },
-        ].map((item) => (
-          <div
-            key={item.label}
-            className="px-8 py-10 border-r border-white/10 last:border-r-0"
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-xs tracking-[0.4em] text-white/45 uppercase"
+            style={{ marginBottom: "30px" }}
           >
-            <p
-              className="text-[clamp(2.5rem,5vw,5rem)] font-black tracking-tighter leading-none mb-2"
-              style={{ color: ACCENT }}
+            — AINSPIRE Studio
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="inline-block"
+          >
+            <Link
+              href="/contact"
+              className="group inline-flex items-center justify-center w-44 h-44 md:w-52 md:h-52 rounded-full border-2 transition-all duration-500 hover:scale-105"
+              style={{ borderColor: ACCENT }}
             >
-              {item.num}
-            </p>
-            <p className="text-sm tracking-widest text-white/30 uppercase">{item.label}</p>
-          </div>
-        ))}
+              <span className="flex flex-col items-center gap-2">
+                <span
+                  className="text-base md:text-lg font-bold tracking-[0.2em] uppercase"
+                  style={{ color: ACCENT }}
+                >
+                  Contact us
+                </span>
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="group-hover:translate-x-1 transition-transform duration-300">
+                  <path d="M5 14h18M16 7l7 7-7 7" stroke={ACCENT} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+            </Link>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -338,14 +423,15 @@ export function AboutPreview() {
 export function Footer() {
   return (
     <footer
-      className="border-t border-white/10 bg-[#0a0a0a] pb-10"
+      className="border-t border-white/10 bg-[#0a0a0a]"
       style={{
-        paddingTop: "50px",
+        paddingTop: "25px",
+        paddingBottom: "0",
         paddingLeft: "clamp(24px, 5vw, 96px)",
         paddingRight: "clamp(24px, 5vw, 96px)",
       }}
     >
-      <div className="flex flex-col md:flex-row md:justify-between gap-12 mb-16">
+      <div className="flex flex-col md:flex-row md:justify-between gap-12" style={{ marginBottom: "30px" }}>
         {/* Brand */}
         <div className="max-w-xs">
           <p className="text-xl font-black tracking-[0.2em] text-white mb-5">AINSPIRE</p>
@@ -395,20 +481,23 @@ export function Footer() {
             <p className="text-[10px] tracking-[0.3em] uppercase text-white/45 mb-5">Contact</p>
             <div className="flex flex-col gap-4">
               <a
-                href="mailto:hello@ainspire.kr"
+                href="mailto:fraverse.ai@gmail.com"
                 className="text-sm text-white/50 hover:text-white transition-colors duration-300"
               >
-                hello@ainspire.kr
+                fraverse.ai@gmail.com
               </a>
-              <p className="text-sm text-white/55">서울특별시 마포구</p>
-              <p className="text-sm text-white/55">+82 10-0000-0000</p>
+              <p className="text-sm text-white/55">서울시 마포구 성지길 25-11 3층 A115호</p>
+              <p className="text-sm text-white/55">02-6048-3032</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Bottom row */}
-      <div className="flex flex-col md:flex-row md:justify-between gap-3 pt-8 border-t border-white/10">
+      <div
+        className="flex flex-col md:flex-row md:justify-between gap-3 border-t border-white/10"
+        style={{ paddingTop: "10px", paddingBottom: "10px" }}
+      >
         <p className="text-xs text-white/40 tracking-wider">
           © 2026 AINSPIRE. All rights reserved.
         </p>

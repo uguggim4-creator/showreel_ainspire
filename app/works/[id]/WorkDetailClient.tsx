@@ -13,7 +13,7 @@ interface Props {
 
 export default function WorkDetailClient({ work, nextWork }: Props) {
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
+    <main className="min-h-screen bg-[#0a0a0a]" style={{ paddingBottom: "50px" }}>
       {/* 풀폭 이미지 히어로 */}
       <div className="relative w-full overflow-hidden" style={{ height: "80vh", maxHeight: "900px" }}>
         <Image
@@ -116,11 +116,11 @@ export default function WorkDetailClient({ work, nextWork }: Props) {
         </div>
 
         {/* 설명 */}
-        <p className="text-white/75 text-lg md:text-xl leading-relaxed mb-20 max-w-3xl">
+        <p className="text-white/75 text-lg md:text-xl leading-relaxed max-w-3xl" style={{ marginBottom: "50px" }}>
           {work.description}
         </p>
 
-        <div className="h-[1px] w-full bg-white/10 mb-12" />
+        <div className="h-[1px] w-full bg-white/10" style={{ marginBottom: "50px" }} />
 
         {/* 다음 작업 */}
         <Link href={`/works/${nextWork.id}`} className="group flex items-center justify-between">

@@ -178,11 +178,16 @@ export default function HeroCarousel() {
                       </p>
                       <h1
                         className="font-black tracking-tighter text-white leading-[0.88] mb-10"
-                        style={{ fontSize: "clamp(3.2rem, 8.5vw, 9.5rem)" }}
+                        style={{
+                          fontSize: slide.headline === "Green Sanctuary"
+                            ? "clamp(3.2rem, 7.5vw, 8.5rem)"
+                            : "clamp(3.2rem, 8.5vw, 9.5rem)",
+                          whiteSpace: slide.headline === "Green Sanctuary" ? "nowrap" : undefined,
+                        }}
                       >
                         {slide.headline}
                       </h1>
-                      <p className="text-xl md:text-2xl text-white/70 font-light tracking-wide mb-12 max-w-2xl">
+                      <p className="text-base md:text-lg text-white/70 font-light tracking-normal mb-12 max-w-2xl whitespace-nowrap">
                         {slide.subline}
                       </p>
                       <Link

@@ -16,6 +16,32 @@ const yt = (id: string) => `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
 
 export const works: Work[] = [
   {
+    id: "restaurant-ai-commercial",
+    title: "AI Restaurant Commercial",
+    client: "AInspire Original",
+    category: "Spec Commercial",
+    year: 2025,
+    duration: "00:30",
+    description:
+      "21년 경력 전문가가 AI로 완성한 레스토랑 광고. Reve, LUMA, Gen4, Kling 등 멀티 AI 툴을 조합해 고급 레스토랑의 분위기와 요리를 시네마틱하게 담아냈습니다.",
+    youtubeId: "cC8UYuRQt2c",
+    thumbnail: yt("cC8UYuRQt2c"),
+    thumbnailColor: "from-red-900 via-rose-800 to-pink-900",
+  },
+  {
+    id: "summer-retro-ad-2025",
+    title: "2025 Summer Retro Ad",
+    client: "AInspire Original",
+    category: "Spec Commercial",
+    year: 2025,
+    duration: "00:30",
+    description:
+      "Reve · Kling AI · Midjourney · Premiere Pro를 조합해 만든 레트로 감성 여름 광고. 빈티지 색감과 AI 비주얼의 만남으로 새로운 광고 미학을 실험합니다.",
+    youtubeId: "zBcp3xItXC8",
+    thumbnail: yt("zBcp3xItXC8"),
+    thumbnailColor: "from-orange-900 via-yellow-800 to-amber-900",
+  },
+  {
     id: "ballerina-ai-shortfilm",
     title: "발레리나",
     client: "AInspire Original",
@@ -149,27 +175,27 @@ export const heroSlides: HeroSlide[] = [
     headline: "Yellow",
     subline: "AInspire Original Series — Ep01",
     description: "평범한 직장인이 동료를 잡아먹었습니다",
-    youtubeId: "yMTES7fYTQo",
+    videoSrc: "/videos/hero-yellow-web.mp4",
   },
   {
     id: 2,
     headline: "Green Sanctuary",
-    subline: "이케아 AI 가상 광고 — 숲을 품은 내추럴 거실",
+    subline: "IKEA AI Spec Ad — 숲을 품은 내추럴 거실",
     description: "AI가 그린 공간, 자연을 닮은 인테리어",
-    youtubeId: "8-MPqdavaO4",
+    videoSrc: "/videos/hero-green-sanctuary.mp4",
   },
   {
     id: 3,
     headline: "Vivid Kitsch",
     subline: "이케아 AI 가상 광고 — 도파민이 터지는 키치한 놀이터",
     description: "색감으로 말하는 AI 크리에이티브",
-    youtubeId: "IP2DcE_CJqg",
+    videoSrc: "/videos/hero-vivid-kitsch.mp4",
   },
   {
     id: 4,
-    headline: "Kling 2.1",
-    subline: "클링으로만 만들어본 AI 광고",
-    description: "Kling 2.1 성능 테스트 — AI만으로 완성한 광고",
-    youtubeId: "UrSZirS15yk",
+    headline: "Dior",
+    subline: "AI Spec Commercial — Luxury Reimagined",
+    description: "AI로 재해석한 럭셔리 브랜드의 세계관",
+    videoSrc: "/videos/hero-dior.mp4",
   },
 ];

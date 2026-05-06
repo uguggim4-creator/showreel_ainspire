@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const contactInfo = [
-  { label: "Email", value: "hello@ainspire.kr", href: "mailto:hello@ainspire.kr" },
-  { label: "Tel", value: "+82 10-0000-0000", href: "tel:+821000000000" },
-  { label: "Location", value: "서울특별시 마포구 합정동", href: null },
-  { label: "Website", value: "ainspire.co.kr", href: "https://www.ainspire.co.kr/" },
-  { label: "YouTube", value: "@AInspire_kr", href: "https://www.youtube.com/@AInspire_kr" },
-  { label: "Instagram", value: "@ainspire_kr", href: "https://www.instagram.com/ainspire_kr/" },
+  { label: "Email", value: "fraverse.ai@gmail.com", href: "mailto:fraverse.ai@gmail.com", group: 1 },
+  { label: "Tel", value: "02-6048-3032", href: "tel:0260483032", group: 1 },
+  { label: "Location", value: "서울시 마포구 성지길 25-11 3층 A115호", href: null, group: 1 },
+  { label: "Website", value: "ainspire.co.kr", href: "https://www.ainspire.co.kr/", group: 2 },
+  { label: "YouTube", value: "@AInspire_kr", href: "https://www.youtube.com/@AInspire_kr", group: 2 },
+  { label: "Instagram", value: "@ainspire_kr", href: "https://www.instagram.com/ainspire_kr/", group: 2 },
 ];
 
 export default function ContactPage() {
@@ -39,16 +39,17 @@ export default function ContactPage() {
 
   return (
     <main
-      className="min-h-screen bg-[#0a0a0a] pb-24"
+      className="min-h-screen bg-[#0a0a0a]"
       style={{
         paddingTop: "60px",
+        paddingBottom: "50px",
         paddingLeft: "clamp(24px, 5vw, 96px)",
         paddingRight: "clamp(24px, 5vw, 96px)",
       }}
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="mb-20 overflow-hidden">
+        <div className="overflow-hidden" style={{ marginBottom: "50px" }}>
           <motion.h1
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
@@ -57,6 +58,13 @@ export default function ContactPage() {
           >
             CONTACT
           </motion.h1>
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            style={{ originX: 0, marginTop: "30px" }}
+            className="h-[1px] w-full bg-white/10"
+          />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
@@ -66,34 +74,35 @@ export default function ContactPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <p className="text-white/70 text-lg md:text-xl leading-relaxed mb-16 max-w-md">
+            <p className="text-white/70 text-lg md:text-xl leading-relaxed max-w-md" style={{ marginBottom: "20px" }}>
               프로젝트 문의, 협업 제안, 또는 그냥 인사도 환영합니다.
               모든 메시지를 꼼꼼히 읽고 답변드립니다.
             </p>
 
-            <div className="space-y-10">
+            <div className="flex flex-col" style={{ gap: "10px" }}>
               {contactInfo.map((item, i) => (
-                <motion.div
-                  key={item.label}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 + i * 0.08 }}
-                  className="flex flex-col gap-2"
-                >
-                  <span className="text-[11px] tracking-[0.3em] text-white/55 uppercase font-medium">
-                    {item.label}
-                  </span>
-                  {item.href ? (
-                    <a
-                      href={item.href}
-                      className="text-white hover:text-[#F4E430] transition-colors duration-300 text-base"
-                    >
-                      {item.value}
-                    </a>
-                  ) : (
-                    <span className="text-white/85 text-base">{item.value}</span>
-                  )}
-                </motion.div>
+                  <motion.div
+                    key={item.label}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + i * 0.08 }}
+                    className="flex flex-col"
+                    style={{ marginTop: "-2px" }}
+                  >
+                    <span className="text-[11px] tracking-[0.3em] text-white/55 uppercase font-medium">
+                      {item.label}
+                    </span>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="text-white hover:text-[#F4E430] transition-colors duration-300 text-base"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <span className="text-white/85 text-base">{item.value}</span>
+                    )}
+                  </motion.div>
               ))}
             </div>
           </motion.div>
@@ -129,7 +138,7 @@ export default function ContactPage() {
                 </button>
               </motion.div>
             ) : (
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
               {[
                 { name: "name", label: "이름 / Name", type: "text", placeholder: "홍길동" },
                 { name: "email", label: "이메일 / Email", type: "email", placeholder: "you@example.com" },
