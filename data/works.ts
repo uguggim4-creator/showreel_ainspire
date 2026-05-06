@@ -15,32 +15,60 @@ export interface Work {
 const yt = (id: string) => `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
 
 export const works: Work[] = [
+  // ── 히어로 영상 (맨 앞) ──
   {
-    id: "restaurant-ai-commercial",
-    title: "AI Restaurant Commercial",
+    id: "yellow-ep01",
+    title: "Yellow Ep01",
+    client: "AInspire Original Series",
+    category: "AI Short Film",
+    year: 2025,
+    duration: "01:00",
+    description:
+      "AInspire 오리지널 시리즈 Yellow 첫 번째 에피소드. 평범한 직장인이 동료를 잡아먹는 충격적 설정을 AI 영상으로 풀어낸 실험적 숏필름.",
+    youtubeId: "yMTES7fYTQo",
+    thumbnail: yt("yMTES7fYTQo"),
+    thumbnailColor: "from-yellow-900 via-amber-800 to-orange-900",
+  },
+  {
+    id: "ikea-green-sanctuary",
+    title: "IKEA — Green Sanctuary",
+    client: "IKEA (Spec Ad)",
+    category: "Spec Commercial",
+    year: 2025,
+    duration: "00:30",
+    description:
+      "이케아 AI 가상 광고 시리즈. 숲을 품은 내추럴 거실 — 자연 소재와 따뜻한 조명이 어우러진 공간을 4K AI 영상으로 완성했습니다.",
+    youtubeId: "8-MPqdavaO4",
+    thumbnail: yt("8-MPqdavaO4"),
+    thumbnailColor: "from-green-900 via-emerald-800 to-teal-900",
+  },
+  {
+    id: "ikea-vivid-kitsch",
+    title: "IKEA — Vivid Kitsch",
+    client: "IKEA (Spec Ad)",
+    category: "Spec Commercial",
+    year: 2025,
+    duration: "00:30",
+    description:
+      "이케아 AI 가상 광고 시리즈. 도파민이 터지는 키치한 놀이터 — 대담한 색감과 팝아트 감성의 인테리어를 4K AI 영상으로 구현했습니다.",
+    youtubeId: "IP2DcE_CJqg",
+    thumbnail: yt("IP2DcE_CJqg"),
+    thumbnailColor: "from-fuchsia-900 via-pink-800 to-rose-900",
+  },
+  {
+    id: "kling-21-ai-ad",
+    title: "Kling 2.1 AI 광고",
     client: "AInspire Original",
     category: "Spec Commercial",
     year: 2025,
     duration: "00:30",
     description:
-      "21년 경력 전문가가 AI로 완성한 레스토랑 광고. Reve, LUMA, Gen4, Kling 등 멀티 AI 툴을 조합해 고급 레스토랑의 분위기와 요리를 시네마틱하게 담아냈습니다.",
-    youtubeId: "cC8UYuRQt2c",
-    thumbnail: yt("cC8UYuRQt2c"),
-    thumbnailColor: "from-red-900 via-rose-800 to-pink-900",
+      "Kling 2.1 성능 테스트. 클링 단일 모델만으로 AI 광고를 제작하면 어디까지 가능한지 실험한 워크.",
+    youtubeId: "UrSZirS15yk",
+    thumbnail: yt("UrSZirS15yk"),
+    thumbnailColor: "from-cyan-900 via-blue-800 to-indigo-900",
   },
-  {
-    id: "summer-retro-ad-2025",
-    title: "2025 Summer Retro Ad",
-    client: "AInspire Original",
-    category: "Spec Commercial",
-    year: 2025,
-    duration: "00:30",
-    description:
-      "Reve · Kling AI · Midjourney · Premiere Pro를 조합해 만든 레트로 감성 여름 광고. 빈티지 색감과 AI 비주얼의 만남으로 새로운 광고 미학을 실험합니다.",
-    youtubeId: "zBcp3xItXC8",
-    thumbnail: yt("zBcp3xItXC8"),
-    thumbnailColor: "from-orange-900 via-yellow-800 to-amber-900",
-  },
+  // ── 기존 작품 (업로드 최신순) ──
   {
     id: "ballerina-ai-shortfilm",
     title: "발레리나",
@@ -157,6 +185,32 @@ export const works: Work[] = [
     youtubeId: "zmvhv-SHL_Q",
     thumbnail: yt("zmvhv-SHL_Q"),
     thumbnailColor: "from-slate-900 via-zinc-800 to-stone-900",
+  },
+  {
+    id: "restaurant-ai-commercial",
+    title: "AI Restaurant Commercial",
+    client: "AInspire Original",
+    category: "Spec Commercial",
+    year: 2025,
+    duration: "00:30",
+    description:
+      "21년 경력 전문가가 AI로 완성한 레스토랑 광고. Reve, LUMA, Gen4, Kling 등 멀티 AI 툴을 조합해 고급 레스토랑의 분위기와 요리를 시네마틱하게 담아냈습니다.",
+    youtubeId: "cC8UYuRQt2c",
+    thumbnail: yt("cC8UYuRQt2c"),
+    thumbnailColor: "from-red-900 via-rose-800 to-pink-900",
+  },
+  {
+    id: "summer-retro-ad-2025",
+    title: "2025 Summer Retro Ad",
+    client: "AInspire Original",
+    category: "Spec Commercial",
+    year: 2025,
+    duration: "00:30",
+    description:
+      "Reve · Kling AI · Midjourney · Premiere Pro를 조합해 만든 레트로 감성 여름 광고. 빈티지 색감과 AI 비주얼의 만남으로 새로운 광고 미학을 실험합니다.",
+    youtubeId: "zBcp3xItXC8",
+    thumbnail: yt("zBcp3xItXC8"),
+    thumbnailColor: "from-orange-900 via-yellow-800 to-amber-900",
   },
 ];
 

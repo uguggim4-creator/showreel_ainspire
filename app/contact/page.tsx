@@ -27,8 +27,46 @@ export default function ContactPage() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const GOOGLE_FORM_ACTION =
+    "https://docs.google.com/forms/d/e/1FAIpQLScGk7BHqMTDkdDeEX2VLoVOGXU9LP38qLO4tAmp4ME_vIDWYw/formResponse";
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // hidden iframe으로 제출 — CORS 문제 없음
+    const iframe = document.createElement("iframe");
+    iframe.name = "hidden_iframe";
+    iframe.style.display = "none";
+    document.body.appendChild(iframe);
+
+    const hiddenForm = document.createElement("form");
+    hiddenForm.method = "POST";
+    hiddenForm.action = GOOGLE_FORM_ACTION;
+    hiddenForm.target = "hidden_iframe";
+
+    const fields: Record<string, string> = {
+      "entry.1696201436": form.name,
+      "entry.1341153246": form.email,
+      "entry.1606876665": form.company,
+      "entry.369529274": form.message,
+    };
+
+    Object.entries(fields).forEach(([name, value]) => {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = name;
+      input.value = value;
+      hiddenForm.appendChild(input);
+    });
+
+    document.body.appendChild(hiddenForm);
+    hiddenForm.submit();
+
+    // 정리
+    setTimeout(() => {
+      document.body.removeChild(hiddenForm);
+      document.body.removeChild(iframe);
+    }, 2000);
+
     setSubmitted(true);
   };
 

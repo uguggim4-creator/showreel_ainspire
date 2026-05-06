@@ -176,17 +176,17 @@ export function SloganSection() {
 }
 
 const studentWorks = [
+  { id: "s-9", title: "CODE:42 [ RIA 리아 ] \"O.O\" Official M/V", author: "Aidol Company", youtubeId: "6K2QFZNBvEs" },
   { id: "s-1", title: "Miserere tui (미제레레 투이: 네게 자비를)", author: "OYR Film", youtubeId: "5IqDABPvH-0" },
   { id: "s-2", title: "YASI : The Night Market of Joseon", author: "OYR Film", youtubeId: "mwyK-JzGmQo" },
   { id: "s-3", title: "전통과 미래가 공존하는 곳, 대한민국 도시의 숨겨진 비주얼", author: "AI드라마", youtubeId: "lF2i-lcInXY" },
-  { id: "s-4", title: "사이버펑크 2077 — 프라이빗 가이세키", author: "NPC의 뒷이야기", youtubeId: "I5uSkFdD-K0" },
   { id: "s-5", title: "The Path of Ink, the Path of Australia", author: "AI MOTION LAB", youtubeId: "v_L2aWGk97Y" },
   { id: "s-6", title: "BLOOD RITE — BLOODPRINT Universe", author: "ecaia", youtubeId: "ePNUOOk-sUk" },
   { id: "s-7", title: "사라진 지붕을 찾아라! — 꼬마탐정 포포", author: "승희쌤", youtubeId: "UI-CtxawYQw" },
   { id: "s-8", title: "엠버 [Ember] EP.1 Among the Strays", author: "Node 8", youtubeId: "WoJRO_md8DU" },
-  { id: "s-9", title: "CODE:42 [ RIA 리아 ] \"O.O\" Official M/V", author: "Aidol Company", youtubeId: "6K2QFZNBvEs" },
   { id: "s-10", title: "시간을 고치는 사람 — 통합본", author: "AI드라마", youtubeId: "Z643PSR8KAY" },
   { id: "s-11", title: "[Knight Run Fan MV] BLUE ASH (Korean Ver.)", author: "sputlab", youtubeId: "VXXewv3_fU0" },
+  { id: "s-4", title: "사이버펑크 2077 — 프라이빗 가이세키", author: "NPC의 뒷이야기", youtubeId: "I5uSkFdD-K0" },
 ];
 
 export function StudentGallery() {
