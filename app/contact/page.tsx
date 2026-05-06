@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const contactInfo = [
-  { label: "Email", value: "fraverse.ai@gmail.com", href: "mailto:fraverse.ai@gmail.com", group: 1 },
+  { label: "Email", value: "gun@ainspire.co.kr", href: "mailto:gun@ainspire.co.kr", group: 1 },
   { label: "Tel", value: "02-6048-3032", href: "tel:0260483032", group: 1 },
   { label: "Location", value: "서울시 마포구 성지길 25-11 3층 A115호", href: null, group: 1 },
   { label: "Website", value: "ainspire.co.kr", href: "https://www.ainspire.co.kr/", group: 2 },

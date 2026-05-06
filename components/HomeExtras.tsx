@@ -434,7 +434,14 @@ export function Footer() {
       <div className="flex flex-col md:flex-row md:justify-between gap-12" style={{ marginBottom: "30px" }}>
         {/* Brand */}
         <div className="max-w-xs">
-          <p className="text-xl font-black tracking-[0.2em] text-white mb-5">AINSPIRE</p>
+          <Image
+            src="/images/logo-white.png"
+            alt="AInspire"
+            width={140}
+            height={35}
+            className="h-7 w-auto"
+            style={{ marginBottom: "10px" }}
+          />
           <p className="text-sm text-white/55 leading-relaxed">
             AI 영상 광고 크리에이티브 스튜디오.<br />
             AI와 크리에이티브의 경계를 허물다.
@@ -481,10 +488,10 @@ export function Footer() {
             <p className="text-[10px] tracking-[0.3em] uppercase text-white/45 mb-5">Contact</p>
             <div className="flex flex-col gap-4">
               <a
-                href="mailto:fraverse.ai@gmail.com"
+                href="mailto:gun@ainspire.co.kr"
                 className="text-sm text-white/50 hover:text-white transition-colors duration-300"
               >
-                fraverse.ai@gmail.com
+                gun@ainspire.co.kr
               </a>
               <p className="text-sm text-white/55">서울시 마포구 성지길 25-11 3층 A115호</p>
               <p className="text-sm text-white/55">02-6048-3032</p>

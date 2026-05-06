@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
@@ -40,9 +41,16 @@ export default function Nav() {
         <Link
           href="/"
           onClick={close}
-          className="relative z-10 text-sm font-bold tracking-[0.25em] text-white hover:text-[#F4E430] transition-colors duration-300"
+          className="relative z-10"
         >
-          AINSPIRE
+          <Image
+            src="/images/logo-white.png"
+            alt="AInspire"
+            width={120}
+            height={30}
+            className="h-6 w-auto"
+            priority
+          />
         </Link>
 
         {/* 데스크탑 메뉴 */}
@@ -141,7 +149,7 @@ export default function Nav() {
               transition={{ delay: 0.3 }}
               className="px-8 pb-12 flex items-center justify-between"
             >
-              <p className="text-xs text-white/25 tracking-widest">fraverse.ai@gmail.com</p>
+              <p className="text-xs text-white/25 tracking-widest">gun@ainspire.co.kr</p>
               <p className="text-xs text-white/25 tracking-widest">© 2026 AINSPIRE</p>
             </motion.div>
           </motion.div>
