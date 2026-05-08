@@ -30,6 +30,19 @@ export const works: Work[] = [
     thumbnailColor: "from-yellow-900 via-amber-800 to-orange-900",
   },
   {
+    id: "yellow-ep02",
+    title: "Yellow Ep02",
+    client: "AInspire Original Series",
+    category: "AI Short Film",
+    year: 2025,
+    duration: "01:00",
+    description:
+      "AInspire 오리지널 시리즈 Yellow 두 번째 에피소드. 오타쿠 BJ가 갑자기 관심을 받으면서 욕망이 부르는 역대급 악마 변신을 그린 AI 숏필름.",
+    youtubeId: "CS48Fx5q8iE",
+    thumbnail: yt("CS48Fx5q8iE"),
+    thumbnailColor: "from-yellow-900 via-orange-800 to-red-900",
+  },
+  {
     id: "hyundai-play-the-city",
     title: "현대건설 — Play the City",
     client: "현대건설",
