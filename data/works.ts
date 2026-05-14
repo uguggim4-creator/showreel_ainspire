@@ -43,6 +43,19 @@ export const works: Work[] = [
     thumbnailColor: "from-yellow-900 via-orange-800 to-red-900",
   },
   {
+    id: "selective-brand-film",
+    title: "Selective Brand Film",
+    client: "Selective",
+    category: "Brand Film",
+    year: 2025,
+    duration: "01:00",
+    description:
+      "셀렉티브 브랜드 필름. 8K 고해상도로 제작된 프리미엄 브랜드 영상으로, AI를 활용해 브랜드의 정체성과 감성을 시네마틱하게 담아냈습니다.",
+    youtubeId: "IL8gLvTAPvQ",
+    thumbnail: yt("IL8gLvTAPvQ"),
+    thumbnailColor: "from-zinc-900 via-stone-800 to-neutral-900",
+  },
+  {
     id: "hyundai-play-the-city",
     title: "현대건설 — Play the City",
     client: "현대건설",
