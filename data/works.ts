@@ -43,6 +43,19 @@ export const works: Work[] = [
     thumbnailColor: "from-yellow-900 via-orange-800 to-red-900",
   },
   {
+    id: "semi-auto-ai-workflow",
+    title: "반자동 AI 영상 워크플로우",
+    client: "AInspire Original",
+    category: "Brand Film",
+    year: 2025,
+    duration: "01:00",
+    description:
+      "AI 영상은 이제 완전 자동이 아니라 '반자동'. 판단은 사람이, 반복은 코드가 맡는 4K 워크플로우를 공개합니다. 효율과 퀄리티를 동시에 잡는 AInspire의 실전 제작 방식.",
+    youtubeId: "itzKTHsMSxk",
+    thumbnail: yt("itzKTHsMSxk"),
+    thumbnailColor: "from-indigo-900 via-blue-800 to-cyan-900",
+  },
+  {
     id: "selective-brand-film",
     title: "Selective Brand Film",
     client: "Selective",
