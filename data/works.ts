@@ -43,6 +43,19 @@ export const works: Work[] = [
     thumbnailColor: "from-yellow-900 via-orange-800 to-red-900",
   },
   {
+    id: "advanced-ai-agent-workflow",
+    title: "고도화된 AI 에이전트 워크플로우",
+    client: "AInspire Original",
+    category: "Brand Film",
+    year: 2025,
+    duration: "01:00",
+    description:
+      "더 고도화된 AI 에이전트로 퀄리티를 한 단계 끌어올린 4K 워크플로우. 영상 제작은 이제 완전 자동이 아니라 '반자동' — 판단은 사람이, 반복은 코드가 맡습니다. AInspire가 실전에서 쓰는 에이전트 기반 제작 방식을 공개합니다.",
+    youtubeId: "YOOC7e5Brcg",
+    thumbnail: yt("YOOC7e5Brcg"),
+    thumbnailColor: "from-sky-900 via-indigo-800 to-violet-900",
+  },
+  {
     id: "semi-auto-ai-workflow",
     title: "반자동 AI 영상 워크플로우",
     client: "AInspire Original",
