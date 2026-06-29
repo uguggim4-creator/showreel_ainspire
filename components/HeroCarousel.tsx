@@ -20,9 +20,10 @@ export default function HeroCarousel() {
     [autoplayRef.current]
   );
 
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
-  const scrollTo = useCallback((i: number) => emblaApi?.scrollTo(i), [emblaApi]);
+  // 수동 조작 시 자동재생 타이머를 리셋해 직후 중복 전환(2칸 넘어감)을 방지
+  const scrollPrev = useCallback(() => { emblaApi?.scrollPrev(); autoplayRef.current.reset(); }, [emblaApi]);
+  const scrollNext = useCallback(() => { emblaApi?.scrollNext(); autoplayRef.current.reset(); }, [emblaApi]);
+  const scrollTo = useCallback((i: number) => { emblaApi?.scrollTo(i); autoplayRef.current.reset(); }, [emblaApi]);
 
   useEffect(() => {
     if (!emblaApi) return;
