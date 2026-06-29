@@ -178,7 +178,7 @@ export function SloganSection() {
 const studentWorks = [
   { id: "s-9", title: "CODE:42 [ RIA 리아 ] \"O.O\" Official M/V", author: "Aidol Company", youtubeId: "6K2QFZNBvEs" },
   { id: "s-1", title: "Miserere tui (미제레레 투이: 네게 자비를)", author: "Magnolia Black Film", youtubeId: "tfbBxU2Su20" },
-  { id: "s-2", title: "YASI : The Night Market of Joseon", author: "Magnolia Black Film", youtubeId: "mwyK-JzGmQo" },
+  { id: "s-2", title: "YASI : The Night Market of Joseon", author: "Magnolia Black Film", youtubeId: "9Z8k8OCE3yk" },
   { id: "s-5", title: "The Path of Ink, the Path of Australia", author: "AI MOTION LAB", youtubeId: "v_L2aWGk97Y" },
   { id: "s-11", title: "[Knight Run Fan MV] BLUE ASH (Korean Ver.)", author: "sputlab", youtubeId: "VXXewv3_fU0" },
   { id: "s-6", title: "BLOOD RITE — BLOODPRINT Universe", author: "ecaia", youtubeId: "ePNUOOk-sUk" },
