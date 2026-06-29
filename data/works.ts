@@ -82,32 +82,6 @@ export const works: Work[] = [
     thumbnailColor: "from-sky-900 via-indigo-800 to-violet-900",
   },
   {
-    id: "fintech-lipsync-ad",
-    title: "완벽한 립싱크 핀테크 광고",
-    client: "AInspire Original",
-    category: "Spec Commercial",
-    year: 2025,
-    duration: "00:30",
-    description:
-      "완벽한 립싱크로 연기까지 가능해진 4K AI 핀테크 광고. AI 캐릭터의 입 모양과 대사를 정교하게 싱크해, 실사 모델 없이도 자연스러운 연기와 메시지 전달이 가능함을 보여주는 워크.",
-    youtubeId: "2rO2vcior1I",
-    thumbnail: yt("2rO2vcior1I"),
-    thumbnailColor: "from-sky-900 via-blue-800 to-indigo-900",
-  },
-  {
-    id: "ai-six-assistant-directors",
-    title: "AI 조연출 6명 동시에 부리기",
-    client: "AInspire Original",
-    category: "Brand Film",
-    year: 2025,
-    duration: "01:00",
-    description:
-      "AI 조연출 6명을 동시에 부려서 영상을 만드는 멀티 에이전트 워크플로우. 사람은 판단과 디렉팅에 집중하고, 반복 작업은 여러 AI 에이전트가 병렬로 처리하는 차세대 AI 영상 제작 방식을 공개합니다.",
-    youtubeId: "diUPZxd2x2w",
-    thumbnail: yt("diUPZxd2x2w"),
-    thumbnailColor: "from-purple-900 via-violet-800 to-indigo-900",
-  },
-  {
     id: "semi-auto-ai-workflow",
     title: "반자동 AI 영상 워크플로우",
     client: "AInspire Original",
